@@ -12,7 +12,7 @@
 
 <div align="center">
 
-**<<Author 1>>**, Dept, USN &nbsp;·&nbsp; **<<Author 2>>**, Dept, USN &nbsp;·&nbsp;**<<Author 3>>**, Dept, USN &nbsp;·&nbsp; **<<Author 4>>**, Dept, USN &nbsp;·&nbsp; **<<Author 5>>**, Dept, USN
+**<<Bidipta DAs>>**, Dept of Computer Science, 252CSC23 &nbsp;·&nbsp; **<<Amala Sharon>>**, Dept of Advanced Computing, 252BDA50 &nbsp;·&nbsp;**<<Joe Vinny Rozario>>**, Dept of Advanced Computing, 252BDA53 &nbsp;·&nbsp; **<<Francis Aakash>>**, Dept of Advanced Computing, 252BDA35
 
 </div>
 
@@ -20,13 +20,15 @@
 
 ## Abstract
 
-Three dimensional images were obtained using a single high numerical aperture hologram recorded in a high resolution photoresist with a table top λ = 46.9 nm laser. Gabor holograms numerically reconstructed over a range of image planes by sweeping the propagation distance allow numerical optical sectioning that results in a robust three-dimensional image of a test object with a lateral resolution of 164 nm. The technique demonstrated here proves that volumetric depth discrimination is achievable from a single compact EUV laser exposure, without the need for large-scale synchrotron or national-laboratory-class facilities. Numerical reconstruction via the Fresnel-Kirchhoff integral and two-dimensional fast Fourier transformation enabled precise mapping of surface topography with depth resolution approaching 2 μm, representing an improvement of more than a factor of two over previously published results.
+Road tunnels often experience the accumulation of smoke, carbon monoxide, and hazardous gases due to vehicle emissions and accidents. Poor air quality inside tunnels can reduce visibility and pose serious health risks to commuters. This paper presents an IoT-based tunnel ventilation system that continuously monitors environmental conditions using gas, smoke, temperature, and humidity sensors. The collected data is processed by an ESP8266 microcontroller, which automatically controls exhaust fans based on detected pollution levels. The system enables real-time monitoring and improves tunnel safety by ensuring proper air circulation and rapid removal of harmful pollutants. Experimental results demonstrate that the proposed system effectively responds to varying environmental conditions and enhances air quality management in road tunnels.
 
 ---
 
 ## Keywords
 
-Extreme Ultraviolet (EUV), Holography, Gabor Hologram, Numerical Optical Sectioning, Fresnel Propagation, High Numerical Aperture, Soft X-ray Laser, Three-Dimensional Imaging, Atomic Force Microscopy, Wavelet Image Decomposition.
+## Keywords
+
+Tunnel Ventilation System, Internet of Things (IoT), ESP8266, Air Quality Monitoring, Smoke Detection, Gas Detection, DHT11 Sensor, Automated Exhaust Control, Machine Learning, Data Analysis, Environmental Monitoring, Smart Transportation Infrastructure
 
 ---
 
