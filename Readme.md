@@ -8,11 +8,11 @@
 
 ---
 
-# {{Project Title}}
+# Smart Tunnel Air Quality Monitoring and Automated Exhaust Control Using ESP8266
 
 <div align="center">
 
-**<<Author 1>>**, Dept, USN &nbsp;·&nbsp; **<<Author 2>>**, Dept, USN &nbsp;·&nbsp;**<<Author 3>>**, Dept, USN &nbsp;·&nbsp; **<<Author 4>>**, Dept, USN &nbsp;·&nbsp; **<<Author 5>>**, Dept, USN
+**<<Bidipta Das>>**, Dept of Computer Science, 252CSC23 &nbsp;·&nbsp; **<<Amala Sharon>>**, Dept of Advance Computing, 252BDA50 &nbsp;·&nbsp;**<<Joe Vinny Rozario>>**, Dept of Advance Computing, 252BDA53 &nbsp;·&nbsp; **<<Francis Aakash>>**, Dept of Advance Computing, 252BDA35 &nbsp;·&nbsp; 
 
 </div>
 
@@ -20,25 +20,28 @@
 
 ## Abstract
 
-Three dimensional images were obtained using a single high numerical aperture hologram recorded in a high resolution photoresist with a table top λ = 46.9 nm laser. Gabor holograms numerically reconstructed over a range of image planes by sweeping the propagation distance allow numerical optical sectioning that results in a robust three-dimensional image of a test object with a lateral resolution of 164 nm. The technique demonstrated here proves that volumetric depth discrimination is achievable from a single compact EUV laser exposure, without the need for large-scale synchrotron or national-laboratory-class facilities. Numerical reconstruction via the Fresnel-Kirchhoff integral and two-dimensional fast Fourier transformation enabled precise mapping of surface topography with depth resolution approaching 2 μm, representing an improvement of more than a factor of two over previously published results.
-
+Road tunnels often experience the accumulation of smoke, carbon monoxide, and hazardous gases due to vehicle emissions and accidents. Poor air quality inside tunnels can reduce visibility and pose serious health risks to commuters. This paper presents an IoT-based tunnel ventilation system that continuously monitors environmental conditions using gas, smoke, temperature, and humidity sensors. The collected data is processed by an ESP8266 microcontroller, which automatically controls exhaust fans based on detected pollution levels. The system enables real-time monitoring and improves tunnel safety by ensuring proper air circulation and rapid removal of harmful pollutants. Experimental results demonstrate that the proposed system effectively responds to varying environmental conditions and enhances air quality management in road tunnels.
 ---
 
 ## Keywords
 
-Extreme Ultraviolet (EUV), Holography, Gabor Hologram, Numerical Optical Sectioning, Fresnel Propagation, High Numerical Aperture, Soft X-ray Laser, Three-Dimensional Imaging, Atomic Force Microscopy, Wavelet Image Decomposition.
+Tunnel Ventilation System, Internet of Things (IoT), ESP8266, Air Quality Monitoring, Smoke Detection, Gas Detection, DHT11 Sensor, Automated Exhaust Control, Machine Learning, Data Analysis, Environmental Monitoring, Smart Transportation Infrastructure
+
 
 ---
 
 ## 1. Introduction
 
-Holographic imaging in the soft X-ray (SXR) and extreme ultraviolet (EUV) spectral regions has been demonstrated in a series of landmark experiments utilizing both EUV/SXR lasers and synchrotron radiation sources. The fundamental principle underpinning these efforts is the use of coherent short-wavelength illumination to surpass the spatial resolution ceiling imposed by conventional visible-light optics — a boundary that constrains virtually all standard optical microscopy techniques.
+## Introduction
 
-The first realization of soft X-ray laser holography was accomplished at Lawrence Livermore National Laboratory using a large-scale laser facility, establishing the feasibility of the approach. Subsequent work extended this to the holographic recording of biological samples and sub-micron structures using soft X-ray radiation from synchrotron facilities [1], [2]. These efforts collectively demonstrated that short-wavelength coherent illumination is a powerful route to nanometer-scale imaging.
+Tunnel roads have become an important part of modern transportation systems because they help reduce traffic congestion and improve connectivity in urban areas. As the number of vehicles on the road continues to increase, tunnels provide an efficient way to manage traffic flow and reduce travel time. However, tunnels are enclosed spaces where harmful vehicular emissions can accumulate quickly. Pollutants such as carbon monoxide (CO), particulate matter, and smoke can reach dangerous levels, affecting both human health and road safety. Poor air quality inside tunnels can cause breathing difficulties, reduced visibility, and an increased risk of accidents. To address this issue, ventilation systems are installed in tunnels to remove polluted air and maintain safe conditions. However, traditional ventilation systems either rely on passive airflow, which may not be effective during heavy traffic, or operate continuously, resulting in high energy consumption and increased operational costs. Therefore, there is a growing need for smarter and more energy-efficient tunnel ventilation solutions.
 
-With the maturation of compact EUV sources based on high harmonic generation (HHG), table-top in-line EUV holography with spatial resolutions of 7.9 μm and 0.8 μm has been demonstrated outside traditional large-facility environments. Time-resolved holographic imaging exploiting the ultrashort pulse duration of HHG sources has further enabled study of ultrafast surface deformation dynamics at lateral resolutions on the order of 100 nm [3], [5]. The recent advent of compact, coherent, table-top EUV laser sources [6] opens further opportunities for novel, nanometer-scale imaging schemes accessible to individual research laboratories.
+Although several tunnel ventilation systems have been developed, many existing solutions focus mainly on monitoring air quality or controlling ventilation based on fixed thresholds. These approaches often fail to respond intelligently to changing environmental conditions and may lead to unnecessary energy usage. In addition, advanced monitoring systems frequently require expensive sensors and infrastructure, making them difficult to implement on a large scale. Another limitation is the lack of integration between environmental data collection, automated hardware control, and intelligent prediction techniques. This creates a gap in developing cost-effective systems that can both monitor tunnel conditions and make informed ventilation decisions in real time.
 
-In this paper, we present a proof-of-principle experiment demonstrating that full three-dimensional volumetric imaging can be obtained from a single high numerical aperture (NA) hologram recorded with a compact table-top EUV laser. By numerically reconstructing Gabor holograms across a range of image planes — sweeping the propagation distance in the Fresnel reconstruction code — a robust numerical optical sectioning technique is established and verified on a purpose-fabricated test object.
+To overcome these challenges, this paper proposes an IoT-based smart tunnel ventilation system that combines environmental monitoring, automated exhaust control, and machine learning techniques. The system uses MQ-2 and MQ-3 sensors to detect smoke and harmful gases, while a DHT11 sensor monitors temperature and humidity levels. An ESP8266 microcontroller collects sensor data and controls exhaust fans through a relay module whenever unsafe conditions are detected. The collected data can also be stored and analyzed to support machine learning models for predicting future pollution levels and improving ventilation management. By combining hardware control with data-driven analysis, the proposed system aims to improve tunnel safety while reducing unnecessary energy consumption.
+
+The main contribution of this work is the development of a low-cost and intelligent tunnel ventilation solution that integrates sensor-based monitoring, automated fan control, and machine learning capabilities. The proposed system demonstrates how real-time environmental data can be used to control physical infrastructure efficiently. The remainder of this paper is organized as follows: Section II reviews related work and existing tunnel ventilation systems, Section III describes the proposed methodology and system architecture, Section IV presents the implementation details and experimental results, and Section V concludes the paper with future research directions.
+
 
 ---
 
@@ -58,15 +61,13 @@ The present work builds directly on this body of literature by combining a compa
 
 ## 3. Problem Statement
 
-Despite progress in EUV and SXR holographic imaging, three key challenges have limited the practical deployment of three-dimensional nanoscale holographic imaging:
+Road tunnels are confined spaces. When vehicle traffic increases, toxic emissions—specifically Carbon Monoxide, particulate matter, and combustion smoke—accumulate rapidly. If a system doesn't respond instantly, it creates an immediate public health and safety hazard for drivers trapped in the tunnel.
 
-**i. Source accessibility.** The highest-resolution demonstrations to date have relied on synchrotron radiation or large national-laboratory laser facilities, placing them beyond the reach of most research groups. Compact table-top alternatives have been explored but their capability for full 3D volumetric imaging had not been systematically established.
+**i. Source accessibility.** The proposed tunnel ventilation system utilizes readily available and low-cost sensors to collect environmental data in real time. The MQ-2 sensor is used for smoke detection, the MQ-3 sensor is used for gas detection, and the DHT11 sensor monitors temperature and humidity. These sensors continuously provide data to the ESP8266 microcontroller, ensuring that environmental conditions inside the tunnel can be monitored without manual intervention. The use of commonly available sensors and IoT technology makes the system affordable, scalable, and easy to deploy in different tunnel environments.
 
-**ii. Depth discrimination from a single exposure.** Conventional holographic reconstruction yields a two-dimensional image at a fixed reconstruction distance. Extracting three-dimensional depth information from a single hologram — without acquiring multiple exposures or employing interferometric multi-pass configurations — poses a fundamental reconstruction challenge.
+**ii. Real-Time Condition Identification from a Single Reading Cycle.** The proposed system is capable of identifying unsafe tunnel conditions using a single cycle of sensor readings. Data collected from the smoke, gas, temperature, and humidity sensors are analyzed immediately by the ESP8266 controller. When abnormal environmental conditions are detected, the system automatically activates the exhaust fan without requiring repeated measurements or human intervention. This enables rapid response to pollution events and helps maintain safe air quality levels within the tunnel.
 
-**iii. Resolution benchmarking.** Quantitative, reproducible assessment of lateral and depth resolution in numerically reconstructed EUV holograms requires rigorous image-analysis protocols. Prior work lacked a standardized methodology for resolution verification at the nanometer scale using table-top sources.
-
-This work addresses all three challenges: it establishes that a compact capillary EUV laser is sufficient for high-NA holographic recording, demonstrates numerical optical sectioning as a robust approach to single-exposure 3D imaging, and applies wavelet image decomposition to provide quantitative resolution metrics.
+**iii. Performance Evaluation and Detection Accuracy.** The performance of the proposed tunnel ventilation system was evaluated by testing its ability to detect smoke and harmful gases under different environmental conditions. Sensor readings were monitored and compared with the system's response time and fan activation behavior. Experimental results showed that the system successfully detected hazardous conditions and activated the exhaust mechanism within a short time interval. The collected data can also be used for machine learning analysis to improve prediction accuracy and optimize ventilation control in future implementations.
 
 ---
 
